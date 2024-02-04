@@ -21,4 +21,6 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
+sync-dotfiles.sh # script to sync dotfiles
+
 .directory   # kde directory configuration file
