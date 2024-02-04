@@ -8,8 +8,7 @@ RED='\033[1;30m'
 NC='\033[0m'
 
 # Navigate to the directory of this script (generally ~/.dotfiles)
-cd $(dirname $(readlink -f $0))
-cd ..
+cd ~/.dotfiles
 
 echo -e "${BLUE}Stashing existing changes...${NC}"
 stash_result=$(git stash push -m "sync-dotfiles: Before syncing dotfiles")
@@ -31,10 +30,10 @@ fi
 
 unmerged_files=$(git diff --name-only --diff-filter=U)
 if [[ ! -z $unmerged_files ]]; then
-   echo -e "${RED}The following files have merge conflicts after popping the stash:${NC}"
-   echo
-   printf %"s\n" $unmerged_files  # Ensure newlines are printed
+    echo -e "${RED}The following files have merge conflicts after popping the stash:${NC}"
+    echo
+    printf %"s\n" $unmerged_files # Ensure newlines are printed
 else
-   # Run stow to ensure all new dotfiles are linked
-   stow .
+    # Run stow to ensure all new dotfiles are linked
+    stow .
 fi
