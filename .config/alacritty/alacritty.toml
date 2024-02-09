@@ -8,9 +8,9 @@ red = "0xec5357"
 white = "0xffffff"
 yellow = "0xf9da6a"
 
-[colors.cursor]
-cursor = "0xffffff"
-text = "0xF81CE5"
+#[colors.cursor]
+#cursor = "0xffffff"
+#text = "0xF81CE5"
 
 [colors.dim]
 black = "0x31363b"
@@ -36,9 +36,9 @@ yellow = "0xf6c744"
 background = "0x101421"
 foreground = "0xfffbf6"
 
-[cursor.style]
-blinking = "On"
-shape = "Beam"
+#[cursor.style]
+#blinking = "On"
+#shape = "Beam"
 
 [font]
 builtin_box_drawing = true
@@ -48,7 +48,7 @@ size = 8
 y = 0
 
 [font.normal]
-family = "CaskaydiaCove NF"
+family = "JetBrainsMono NF"
 
 [font.offset]
 x = 0
@@ -64,6 +64,8 @@ program = "/bin/zsh"
 
 [window]
 opacity = 0.9
+decorations = "None"
+blur = true
 
 [window.padding]
 x = 3
