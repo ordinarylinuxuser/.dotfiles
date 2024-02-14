@@ -36,13 +36,13 @@ yellow = "0xf6c744"
 background = "0x101421"
 foreground = "0xfffbf6"
 
-#[cursor.style]
-#blinking = "On"
-#shape = "Beam"
+[cursor.style]
+blinking = "On"
+shape = "Beam"
 
 [font]
 builtin_box_drawing = true
-size = 8
+size = 10
 
 [font.glyph_offset]
 y = 0
