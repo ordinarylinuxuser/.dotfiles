@@ -143,7 +143,11 @@ alias ls="exa --icons"
 alias lt="exa --tree --icons -a -I '.git|__pycache__|.mypy_cache|.ipynb_checkpoints'"
 alias ..="cd .."
 
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# start zoxide
+eval "$(zoxide init --cmd cd zsh)"
 
 # start tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
