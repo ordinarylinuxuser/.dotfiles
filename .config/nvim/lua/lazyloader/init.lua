@@ -16,14 +16,14 @@ require("lazy").setup(
         { import = "plugins" }
     },
     {
-        -- install = {
-        --     colorscheme = { "nightfly" },
-        -- },
         checker = {
             enabled = true,
-            notify = false,
+            notify = true,
         },
         change_detection = {
-            notify = false,
+            notify = true,
         },
+        ui = {
+            border = "rounded"
+        }
     })

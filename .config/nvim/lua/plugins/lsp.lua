@@ -11,7 +11,7 @@ return { --- Uncomment these if you want to manage LSP servers from neovim
             local pid = vim.fn.getpid()
             local mason_path = vim.fn.expand('$HOME/.local/share/nvim/mason/')
             local lsp_zero = require('lsp-zero')
-
+            lsp_zero.extend_lspconfig()
             lsp_zero.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
                 -- to learn the available actions
@@ -28,7 +28,11 @@ return { --- Uncomment these if you want to manage LSP servers from neovim
             })
 
             -- mason setup
-            require('mason').setup({})
+            require('mason').setup({
+                ui = {
+                    border = 'rounded'
+                }
+            })
             require('mason-lspconfig').setup({
                 ensure_installed = { 'lua_ls', 'omnisharp' },
                 handlers = {

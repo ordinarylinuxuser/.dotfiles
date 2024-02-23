@@ -47,3 +47,6 @@ keymap("n", "<A-S-Down>", ":resize +1<CR>", default_opts)
 -- keymap("n", "<A-Right>", "<C-w><S-w>", default_opts)
 keymap("n", "<A-Up>", "<C-w><C-w>", default_opts)
 keymap("n", "<A-Down>", "<C-w><S-w>", default_opts)
+
+-- exit the insert mode with jj
+keymap("i", "jj", "<ESC>", default_opts)
