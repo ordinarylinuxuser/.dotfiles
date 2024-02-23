@@ -9,7 +9,7 @@ return { --- Uncomment these if you want to manage LSP servers from neovim
             vim.g.lsp_zero_extend_lspconfig = 1
             vim.g.lsp_zero_extend_cmp = 1
             local pid = vim.fn.getpid()
-            local mason_path = '/home/ken/.local/share/nvim/mason/'
+            local mason_path = vim.fn.expand('$HOME/.local/share/nvim/mason/')
             local lsp_zero = require('lsp-zero')
 
             lsp_zero.on_attach(function(client, bufnr)
