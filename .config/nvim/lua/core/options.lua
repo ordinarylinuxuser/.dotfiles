@@ -21,10 +21,13 @@ opt.signcolumn = "yes"    -- Always show sign column
 opt.autoindent = true     -- indent a newline the same amount as the line just typed
 --opt.clipboard = "unnamedplus" -- Access system clipboard
 opt.timeoutlen = 300      --	Time in milliseconds to wait for a mapped sequence to complete.
-opt.list = true
+opt.list = false
 opt.termguicolors = true
 opt.mousemoveevent = true
-
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.expandtab = true
 --search configurations
 opt.wildignorecase = true
 opt.path:remove "/usr/include"
