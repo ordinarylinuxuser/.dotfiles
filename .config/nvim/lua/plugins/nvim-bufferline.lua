@@ -9,7 +9,7 @@ return {
                 numbers = "buffer_id",
                 highlights = require("catppuccin.groups.integrations.bufferline").get(),
                 diagnostics = "nvim_lsp",
-                separator_style = "slant" or "padded_slant",
+                separator_style = "thin" or "slant" or "padded_slant",
                 show_tab_indicators = true,
                 show_buffer_close_icons = true,
                 show_close_icon = false,
