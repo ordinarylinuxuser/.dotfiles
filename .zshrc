@@ -157,8 +157,8 @@ export HISTCONTROL=ignoreboth
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # map exa commands to normal ls commands
-alias ll="exa -l -g --icons"
-alias ls="exa --icons"
+alias ll="exa -a -l -g --icons -s=type"
+alias ls="exa -a --icons -s=type"
 alias lt="exa --tree --icons -a -I '.git|__pycache__|.mypy_cache|.ipynb_checkpoints'"
 alias ..="cd .."
 
@@ -168,7 +168,7 @@ alias ..="cd .."
 # start zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# start tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+# start tmux , here i am only starting tmux if i am using alacritty
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ "$TERM" == "alacritty" ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
