@@ -5,7 +5,7 @@ source /usr/share/nvm/init-nvm.sh
 
 #dotnet
 export DOTNET_ROOT=$HOME/.dotnet
-
+export DOTNET_INSTALL_DIR=$HOME/.dotnet
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH
 
 # Path to your oh-my-zsh installation.

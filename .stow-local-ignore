@@ -25,4 +25,4 @@ sync-dotfiles.sh # script to sync dotfiles
 
 .directory   # kde directory configuration file
 
-\docs  # linux documentations
+/docs  # linux documentations
