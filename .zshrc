@@ -50,6 +50,7 @@ source /usr/share/nvm/init-nvm.sh
 source ~/.az.completion.zsh
 source ~/.fzf.conf.zsh
 source ~/.dotnet.completion.zsh
+source ~/.helm.completion.zsh
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.aliases.zsh
