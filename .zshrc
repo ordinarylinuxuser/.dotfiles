@@ -45,18 +45,21 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git nvm colored-man-pages command-not-found pip themes zsh-interactive-cd zsh-syntax-highlighting zsh-autosuggestions)
 
 # source completion and config external files
+autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-source /usr/share/nvm/init-nvm.sh
-source ~/.az.completion.zsh
-source ~/.fzf.conf.zsh
-source ~/.dotnet.completion.zsh
-source ~/.helm.completion.zsh
-source $ZSH/oh-my-zsh.sh
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+[ -f ~/.azcompletion.zsh ] && source ~/.az.completion.zsh
+[ -f ~/.fzf.conf.zsh ] && source ~/.fzf.conf.zsh
+[ -f ~/.dotnet.completion.zsh ] && source ~/.dotnet.completion.zsh
+[ -f ~/.helm.completion.zsh ] && source ~/.helm.completion.zsh
+[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/.aliases.zsh
+[ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
 
-# start zoxide
-eval "$(zoxide init --cmd cd zsh)"
+if command -v zoxide &> /dev/null; then
+  # start zoxide
+  eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # start tmux , here i am only starting tmux if i am using alacritty
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ "$TERM" == "alacritty" ]] && [ -z "$TMUX" ]; then
