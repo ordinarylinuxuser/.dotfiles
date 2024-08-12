@@ -64,7 +64,7 @@ program = "/bin/zsh"
 
 [window]
 opacity = 0.9
-decorations = "None"
+#decorations = "None"
 blur = true
 
 [window.padding]
