@@ -12,9 +12,9 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
+  export EDITOR='vim'
 else
-	export EDITOR='nvim'
+  export EDITOR='nvim'
 fi
 
 export HISTCONTROL=ignoreboth
@@ -42,7 +42,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm colored-man-pages command-not-found pip themes zsh-interactive-cd zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git nvm colored-man-pages command-not-found pip themes zsh-syntax-highlighting zsh-autosuggestions)
 
 # source completion and config external files
 autoload -U +X compinit && compinit
@@ -53,15 +53,14 @@ autoload -U +X bashcompinit && bashcompinit
 [ -f ~/.dotnet.completion.zsh ] && source ~/.dotnet.completion.zsh
 [ -f ~/.helm.completion.zsh ] && source ~/.helm.completion.zsh
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
 
-if command -v zoxide &> /dev/null; then
+if command -v zoxide &>/dev/null; then
   # start zoxide
   eval "$(zoxide init --cmd cd zsh)"
 fi
 
 # start tmux , here i am only starting tmux if i am using alacritty
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -n "$KONSOLE_VERSION" ]; then
+if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -n "$KONSOLE_VERSION" ]; then
   exec tmux
 fi
