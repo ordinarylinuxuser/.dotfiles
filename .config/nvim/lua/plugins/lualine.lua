@@ -29,7 +29,7 @@ return {
                 lualine_z = {},
             },
             tabline = {},
-            extensions = {},
+            extensions = { "fzf", "fugitive", "man", "mason", "nvim-tree" },
         }
     end,
 }

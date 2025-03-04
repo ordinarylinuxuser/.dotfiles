@@ -45,3 +45,8 @@ vim.cmd [[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]]
+
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+    virtual_text = false,
+})

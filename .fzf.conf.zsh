@@ -19,7 +19,6 @@ export FZF_DEFAULT_OPTS="
 	'
 --bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}'
 --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)'
---bind 'focus:+transform-header:file --brief {}'
 --color 'border:#aaaaaa,label:#cccccc'
 --color 'preview-border:#9999cc,preview-label:#ccccff'
 --color 'list-border:#669966,list-label:#99cc99'
