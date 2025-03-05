@@ -25,7 +25,11 @@ return {
             { "<leader>gs", "<cmd>Git<CR>",                                         desc = "[G]it [S]tatus" },
 
             -- Glow
-            { "<leader>mp", "<cmd>Glow<CR>",                                        desc = "[M]arkdown [P]review" }
+            { "<leader>mp", "<cmd>Glow<CR>",                                        desc = "[M]arkdown [P]review" },
+
+            -- Transparency
+            { "<leader>tt", "<cmd>TransparentToggle<CR>",                           desc = "[T]ransparent [T]oggle" },
+            { "<leader>tw", "<cmd>Twilight<CR>",                                    desc = "[T][W]ilight" },
 
         }
     },
