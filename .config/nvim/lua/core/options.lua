@@ -48,7 +48,7 @@ vim.cmd [[
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
-    virtual_text = false,
+  virtual_text = false,
 })
 
-g.transparent_enabled = 1
+--g.transparent_enabled = 0
