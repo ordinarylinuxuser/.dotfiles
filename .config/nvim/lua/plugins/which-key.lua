@@ -27,9 +27,8 @@ return {
             -- Glow
             { "<leader>mp", "<cmd>Glow<CR>",                                        desc = "[M]arkdown [P]review" },
 
-            -- Transparency
-            { "<leader>tt", "<cmd>TransparentToggle<CR>",                           desc = "[T]ransparent [T]oggle" },
-            { "<leader>tw", "<cmd>Twilight<CR>",                                    desc = "[T][W]ilight" },
+            -- Terminal
+            { "<leader>tt", "<cmd>belowright terminal<CR>",                         desc = "[T]oggle [T]erminal" },
 
         }
     },
