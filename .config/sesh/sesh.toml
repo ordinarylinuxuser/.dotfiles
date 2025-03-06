@@ -4,6 +4,12 @@ path = "~/.dotfiles"
 startup_command = "nvim"
 
 [[session]]
-name = "Viva Virtual Machine "
+name = "config "
+path = "~/.config"
+startup_command = "nvim"
+
+[[session]]
+name = "Viva VM "
 path = "~/Documents/Viva"
 startup_command = "sh connect_workavd.sh"
+
