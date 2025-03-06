@@ -10,7 +10,7 @@ return {
             -- Buffers
             { "<leader>b",  group = "Buffers" },
             { "<leader>bc", "<cmd>bd!<CR>",                                         desc = "[C]lose Current Buffer" },
-            { "<leader>bD", "<Cmd>%bd|e#|bd#<CR>",                                  desc = "[D]elete All Buffers" },
+            { "<leader>bd", "<Cmd>%bd|e#|bd#<CR>",                                  desc = "[D]elete All Buffers" },
 
             -- Find
             { "<leader>f",  group = "Find" },
@@ -33,12 +33,5 @@ return {
         }
     },
     keys = {
-        -- {
-        --     "<leader>?",
-        --     function()
-        --         require("which-key").show({ global = false })
-        --     end,
-        --     desc = "Buffer Local Keymaps (which-key)",
-        -- },
     },
 }
