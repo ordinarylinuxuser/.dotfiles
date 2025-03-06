@@ -6,12 +6,17 @@ return {
             flavour = "mocha", -- latte, frappe, macchiato, mocha
             term_colors = false,
             integrations = {
+                alpha = true,
                 cmp = true,
                 gitsigns = true,
                 nvimtree = true,
                 leap = true,
                 mason = true,
                 which_key = true,
+                -- treesitter = false,
+                notify = true,
+                fzf = true,
+                noice = true,
                 -- dap = {
                 --     enabled = false,
                 --     enable_ui = false, -- enable nvim-dap-ui
