@@ -16,7 +16,10 @@ return { --- Uncomment these if you want to manage LSP servers from neovim
                 -- see :help lsp-zero-keybindings
                 -- to learn the available actions
                 lsp_zero.default_keymaps({ buffer = bufnr })
-                lsp_zero.buffer_autoformat()
+                -- make sure there is at least one client with formatting capabilities
+                if client.supports_method('textDocument/formatting') then
+                    lsp_zero.buffer_autoformat()
+                end
             end)
 
             -- sign icons
