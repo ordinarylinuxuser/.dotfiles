@@ -42,7 +42,7 @@ shape = "Beam"
 
 [font]
 builtin_box_drawing = true
-size = 10
+size = 14
 
 [font.glyph_offset]
 y = 0
@@ -59,14 +59,12 @@ action = "SpawnNewInstance"
 key = "Return"
 mods = "Control|Shift"
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 
 [window]
-opacity = 0.9
+opacity = 1
 #decorations = "None"
-blur = true
+padding = { x = 1, y = 1 }
+blur = false
 
-[window.padding]
-x = 3
-y = 3

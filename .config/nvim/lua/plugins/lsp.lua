@@ -40,6 +40,9 @@ return { --- Uncomment these if you want to manage LSP servers from neovim
                 ensure_installed = { 'lua_ls', 'omnisharp' },
                 handlers = {
                     lsp_zero.default_setup,
+                    marksman = function()
+                        require 'lspconfig'.marksman.setup {}
+                    end,
                     omnisharp = function()
                         require('lspconfig').omnisharp.setup {
                             cmd = { mason_path .. "bin/omnisharp", '--languageserver', '--hostPID', tostring(pid) },

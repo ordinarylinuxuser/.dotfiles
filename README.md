@@ -7,7 +7,7 @@
     mkdir ~/.dotfiles
     ```
 
-- Use git to clone the repo under .dotfiles 
+- Use git to clone the repo under .dotfiles
 
     ```sh
     cd ~/.dotfiles
