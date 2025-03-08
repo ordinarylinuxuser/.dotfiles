@@ -23,6 +23,8 @@ return {
 
             -- Git
             { "<leader>gs", "<cmd>Git<CR>",                                         desc = "[G]it [S]tatus" },
+            { "<leader>gP", "<cmd>Git pull<CR>",                                    desc = "[G]it [P]ull" },
+            { "<leader>gp", "<cmd>Git push<CR>",                                    desc = "[G]it [p]ush" },
 
             -- Glow
             { "<leader>mp", "<cmd>Glow<CR>",                                        desc = "[M]arkdown [P]review" },
