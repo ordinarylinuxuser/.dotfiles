@@ -26,6 +26,7 @@ return {
 
             -- Glow
             { "<leader>mp", "<cmd>Glow<CR>",                                        desc = "[M]arkdown [P]review" },
+            { "<leader>mt", "<cmd>Mtoc<CR>",                                        desc = "[M]arkdown [T]able of Content" },
 
             -- Terminal
             { "<leader>tt", "<cmd>belowright terminal<CR>",                         desc = "[T]oggle [T]erminal" },
