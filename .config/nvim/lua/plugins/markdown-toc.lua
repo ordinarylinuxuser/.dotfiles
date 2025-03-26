@@ -17,8 +17,8 @@ return {
             enabled = true,
             -- These fence texts are wrapped within "<!-- % -->", where the '%' is
             -- substituted with the text.
-            start_text = "mtoc-start",
-            end_text = "mtoc-end"
+            start_text = "toc-start",
+            end_text = "toc-end"
             -- An empty line is inserted on top and below the ToC list before the being
             -- wrapped with the fence texts, same as vim-markdown-toc.
         },
@@ -31,11 +31,11 @@ return {
             -- If cycle_markers = false and markers is a list, only the first is used.
             -- You can set to '1.' to use a automatically numbered list for ToC (if
             -- your markdown render supports it).
-            --markers = '*',
-            --cycle_markers = false,
+            markers = '-',
+            cycle_markers = false,
             -- Example config for cycling markers:
-            markers = { '*', '+', '-' },
-            cycle_markers = true,
+            -- markers = { '*', '+', '-' },
+            -- cycle_markers = true,
         },
     },
 }
