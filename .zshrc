@@ -1,7 +1,7 @@
 #dotnet
 export DOTNET_ROOT=$HOME/.dotnet
 export DOTNET_INSTALL_DIR=$HOME/.dotnet
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/go/bin:$HOME/.cargo/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -47,7 +47,7 @@ plugins=(git nvm colored-man-pages command-not-found pip themes zsh-syntax-highl
 # source completion and config external files
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+[ -f ~/.nvm/init-nvm.sh ] && source ~/.nvm/init-nvm.sh
 [ -f ~/.azcompletion.zsh ] && source ~/.az.completion.zsh
 [ -f ~/.fzf.conf.zsh ] && source ~/.fzf.conf.zsh
 [ -f ~/.dotnet.completion.zsh ] && source ~/.dotnet.completion.zsh
@@ -62,6 +62,5 @@ fi
 
 # start tmux , here i am only starting tmux if i am using alacritty
 if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && { [ -n "$KONSOLE_VERSION" ] || [ "$TERM" = "alacritty" ]; }; then
-    exec tmux new -A -s "Home"
+  exec tmux new -A -s "Home"
 fi
-
