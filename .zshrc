@@ -47,7 +47,8 @@ plugins=(git nvm colored-man-pages command-not-found pip themes zsh-syntax-highl
 # source completion and config external files
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-[ -f ~/.nvm/init-nvm.sh ] && source ~/.nvm/init-nvm.sh
+[ -f ~/.nvm/init-nvm.sh ] && source ~/.nvm/init-nvm.sh # for fedora
+#[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh # for arch
 [ -f ~/.azcompletion.zsh ] && source ~/.az.completion.zsh
 [ -f ~/.fzf.conf.zsh ] && source ~/.fzf.conf.zsh
 [ -f ~/.dotnet.completion.zsh ] && source ~/.dotnet.completion.zsh

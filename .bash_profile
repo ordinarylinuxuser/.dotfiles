@@ -13,4 +13,5 @@ export DOTNET_ROOT=$HOME/.dotnet
 export DOTNET_INSTALL_DIR=$HOME/.dotnet
 
 export PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
-source $HOME/.nvm/init-nvm.sh
+source $HOME/.nvm/init-nvm.sh # for fedora
+#source /usr/share/nvm/init-nvm.sh # for arch
