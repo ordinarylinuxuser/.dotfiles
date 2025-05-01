@@ -2,7 +2,7 @@
 Categories=Utility;
 Comment[en_US]=Launch the virtual machine console for "Windows 11"
 Comment=Launch the virtual machine console for "Windows 11"
-Exec=~/.dotfiles/scripts/connect_win11_vm.sh
+Exec=/home/ken/.dotfiles/scripts/connect_win11_vm.sh
 GenericName[en_US]=
 GenericName=
 Icon=virt-manager
