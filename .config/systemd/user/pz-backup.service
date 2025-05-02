@@ -1,0 +1,7 @@
+[Unit]
+Description=Project Zomboid Scheduled Backup
+
+[Service]
+Type=oneshot
+ExecStart=%h/scripts/pz_backup/pz_backup.sh
+ExecCondition=/usr/bin/pgrep -x "ProjectZomboid6"

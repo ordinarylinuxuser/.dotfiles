@@ -1,0 +1,8 @@
+[Unit]
+Description=Project Zomboid Initial Backup Trigger
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/scripts/pz_backup/pz-process-monitor.sh
+Restart=on-failure

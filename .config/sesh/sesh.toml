@@ -1,5 +1,5 @@
 [[session]]
-name = "Home"
+name = "Home "
 path = "~"
 
 [[session]]
@@ -17,3 +17,10 @@ name = "scripts 󰯁"
 path = "~/scripts"
 #startup_command = "sh connect_workavd.sh"
 
+[[session]]
+name = "gits "
+path = "~/Documents/gits"
+
+[[session]]
+name = "Downloads "
+path = "~/Downloads"
