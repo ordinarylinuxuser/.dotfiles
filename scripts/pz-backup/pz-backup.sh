@@ -7,31 +7,38 @@ BACKUP_DIR="/data/Zomboid_Backups" # Where to store backups
 MAX_BACKUPS=50                     # Maximum number of backups to keep
 LOG_FILE="$BACKUP_DIR/backup.log"
 COMPRESSION_LEVEL=9 # 1 (fastest) to 9 (best compression)
+TAG="manual"        # Tag for backup type
 
 # Create backup directory if it doesn't exist
 mkdir -p "$BACKUP_DIR"
 
 touch "$LOG_FILE" # Ensure log file exists
 
+case "$1" in
+--timer)
+    TAG="timer" # Use timer tag for backup
+    ;;
+--game-init)
+    TAG="game-init" # Use game initialization tag for backup
+    ;;
+*)
+    TAG="manual" # Default to manual backup
+    ;;
+esac
 create_backup() {
     # Generate timestamp for backup file
     TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
-    BACKUP_FILE="$BACKUP_DIR/pz_backup_$TIMESTAMP.tar.gz"
+    BACKUP_FILE="${BACKUP_DIR}/pz_backup_${TAG}_${TIMESTAMP}.tar.gz"
 
     # Create compressed backup
     echo "Creating compressed backup at $BACKUP_FILE" | tee -a "$LOG_FILE"
 
-    # Show progress if pv is installed
-    if command -v pv >/dev/null; then
-        tar cf - -C "$SAVE_DIR" . | pv -s $(du -sb "$SAVE_DIR" | awk '{print $1}') | gzip -$COMPRESSION_LEVEL >"$BACKUP_FILE"
-    else
-        echo "Compressing files (install pv for progress display)..." | tee -a "$LOG_FILE"
-        tar czf "$BACKUP_FILE" -C "$SAVE_DIR" .
-    fi
+    echo "Compressing files ..." | tee -a "$LOG_FILE"
+    tar czf "$BACKUP_FILE" -C "$SAVE_DIR" .
 
     # Clean up old backups
-    while [ $(ls -1 $BACKUP_DIR/pz_backup_*.tar.gz 2>/dev/null | wc -l) -gt $MAX_BACKUPS ]; do
-        OLDEST_BACKUP=$(ls -1t $BACKUP_DIR/pz_backup_*.tar.gz | tail -n 1)
+    while [ $(ls -1 $BACKUP_DIR/pz_backup_*_*.tar.gz 2>/dev/null | wc -l) -gt $MAX_BACKUPS ]; do
+        OLDEST_BACKUP=$(ls -1t $BACKUP_DIR/pz_backup_*_*.tar.gz | tail -n 1)
         echo "Removing old backup: $OLDEST_BACKUP" | tee -a "$LOG_FILE"
         rm -f "$OLDEST_BACKUP"
     done

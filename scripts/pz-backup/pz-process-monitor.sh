@@ -3,7 +3,7 @@
 while true; do
     if pgrep -x "ProjectZomboid6" >/dev/null; then
         if [ ! -f /tmp/pz-running ]; then
-            $HOME/scripts/pz_backup/pz_backup.sh
+            $HOME/scripts/pz-backup/pz-backup.sh --game-init
             touch /tmp/pz-running
         fi
     else
