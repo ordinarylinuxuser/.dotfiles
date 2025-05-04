@@ -3,5 +3,5 @@ Description=Project Zomboid Scheduled Backup
 
 [Service]
 Type=oneshot
-ExecStart=%h/scripts/pz-backup/pz-backup.sh --timer
+ExecStart=%h/scripts/pz-backup.sh --timer
 ExecCondition=/usr/bin/pgrep -x "ProjectZomboid6"
