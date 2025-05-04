@@ -7,7 +7,7 @@ export FZF_DEFAULT_OPTS="
 --tmux 60%
 --ansi
 --style full
---layout default
+--layout reverse
 --border --padding 1,2
 --input-label ' Input ' --header-label ' File Type '
 --bind 'result:transform-list-label:
