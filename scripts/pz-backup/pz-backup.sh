@@ -2,12 +2,16 @@
 
 # Backup script for Project Zomboid saves with ZIP compression
 # Configurable variables
-SAVE_DIR="$HOME/Zomboid/Saves"     # Default save location
-BACKUP_DIR="/data/Zomboid_Backups" # Where to store backups
-MAX_BACKUPS=50                     # Maximum number of backups to keep
-LOG_FILE="$BACKUP_DIR/backup.log"
-COMPRESSION_LEVEL=9 # 1 (fastest) to 9 (best compression)
-TAG="manual"        # Tag for backup type
+# SAVE_DIR="$HOME/Zomboid/Saves"     # Default save location
+# BACKUP_DIR="/data/Zomboid_Backups" # Where to store backups
+# MAX_BACKUPS=50                     # Maximum number of backups to keep
+# LOG_FILE="$BACKUP_DIR/backup.log"
+# COMPRESSION_LEVEL=9 # 1 (fastest) to 9 (best compression)
+# TAG="manual"        # Tag for backup type
+
+# Put all the variables in a separate file
+# Load environment variables from the private file
+source ~/.dotfiles-private/.zomboid.env
 
 # Create backup directory if it doesn't exist
 mkdir -p "$BACKUP_DIR"
