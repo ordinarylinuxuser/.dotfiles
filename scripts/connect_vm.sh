@@ -8,11 +8,11 @@ if grep -q '^ID=arch$' /etc/os-release; then
 fi
 
 if [ "$client" = "viva" ]; then
-    $FREERDP $VIVA_RDPW_LOCATION /gateway:type:arm /sec:aad /floatbar +auto-reconnect +dynamic-resolution
+    $FREERDP $VIVA_RDPW_LOCATION /gateway:type:arm /sec:aad /floatbar /f +auto-reconnect +dynamic-resolution
 fi
 
 if [ "$client" = "otr" ]; then
-    $FREERDP $OTR_RDPW_LOCATION /gateway:type:arm /u:$OTR_USER /p:$OTR_PASS /d:$OTR_DOMAIN /sec:tls /cert:ignore /floatbar +auto-reconnect +dynamic-resolution
+    $FREERDP $OTR_RDPW_LOCATION /gateway:type:arm /u:$OTR_USER /p:$OTR_PASS /d:$OTR_DOMAIN /sec:tls /cert:ignore /floatbar +auto-reconnect +dynamic-resolution /f
 fi
 
 if [ "$client" = "win11" ]; then
@@ -30,7 +30,8 @@ if [ "$client" = "win11" ]; then
 
         # Wait until the VM state indicates it's running
         while [[ $(virsh $LIBVIRT_DEFAULT_URI domstate "$VM_NAME" 2>/dev/null) != *"running"* ]]; do
-            sleep 30
+            echo "Waiting 60 seconds for vm to start up"
+            sleep 60
         done
     fi
 
