@@ -1,31 +1,31 @@
 [[session]]
-name = "Home "
+name = "Home"
 path = "~"
 
 [[session]]
-name = "dotfiles "
+name = "dotfiles"
 path = "~/.dotfiles"
 startup_command = "nvim"
 
 [[session]]
-name = "dotfiles-private "
+name = "dotfiles-private"
 path = "~/.dotfiles-private"
 startup_command = "nvim"
 
 [[session]]
-name = "config "
+name = "config"
 path = "~/.config"
 startup_command = "nvim"
 
 [[session]]
-name = "scripts 󰯁"
+name = "scripts"
 path = "~/scripts"
 #startup_command = "sh connect_workavd.sh"
 
 [[session]]
-name = "gits "
+name = "gits"
 path = "~/Documents/gits"
 
 [[session]]
-name = "Downloads "
+name = "Downloads"
 path = "~/Downloads"
