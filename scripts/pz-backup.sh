@@ -41,11 +41,11 @@ create_backup() {
     tar czf "$BACKUP_FILE" -C "$SAVE_DIR" .
 
     # Clean up old backups
-    while [ $(ls -1 $BACKUP_DIR/pz_backup_*_*.tar.gz 2>/dev/null | wc -l) -gt $MAX_BACKUPS ]; do
-        OLDEST_BACKUP=$(ls -1t $BACKUP_DIR/pz_backup_*_*.tar.gz | tail -n 1)
-        echo "Removing old backup: $OLDEST_BACKUP" | tee -a "$LOG_FILE"
-        rm -f "$OLDEST_BACKUP"
-    done
+    # while [ $(ls -1 $BACKUP_DIR/pz_backup_*_*.tar.gz 2>/dev/null | wc -l) -gt $MAX_BACKUPS ]; do
+    #     OLDEST_BACKUP=$(ls -1t $BACKUP_DIR/pz_backup_*_*.tar.gz | tail -n 1)
+    #     echo "Removing old backup: $OLDEST_BACKUP" | tee -a "$LOG_FILE"
+    #     rm -f "$OLDEST_BACKUP"
+    # done
 
     echo "Backup completed at $(date)" | tee -a "$LOG_FILE"
     echo "Archive size: $(du -h "$BACKUP_FILE" | cut -f1)" | tee -a "$LOG_FILE"
