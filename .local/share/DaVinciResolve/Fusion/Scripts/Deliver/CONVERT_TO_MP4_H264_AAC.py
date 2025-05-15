@@ -63,8 +63,8 @@ def convert_with_ffmpeg(input_path):
         print(f"Successfully converted to {output_path}")
         
         # Optional: Delete intermediate file
-        os.remove(input_path)
-        print(f"Deleted intermediate file: {input_path}")
+        #os.remove(input_path)
+        #print(f"Deleted intermediate file: {input_path}")
         
     except subprocess.CalledProcessError as e:
         print(f"FFmpeg conversion failed: {str(e)}")

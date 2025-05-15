@@ -27,11 +27,14 @@ if [ "$client" = "win11" ]; then
         echo
         echo "VM '$VM_NAME' is not running. Starting it..."
         virsh $LIBVIRT_DEFAULT_URI start "$VM_NAME"
+        
+        echo "Waiting 30 seconds for vm to start up"
+        sleep 30
 
         # Wait until the VM state indicates it's running
         while [[ $(virsh $LIBVIRT_DEFAULT_URI domstate "$VM_NAME" 2>/dev/null) != *"running"* ]]; do
-            echo "Waiting 60 seconds for vm to start up"
-            sleep 60
+            echo "Waiting 30 seconds for vm to start up"
+            sleep 30
         done
     fi
 
