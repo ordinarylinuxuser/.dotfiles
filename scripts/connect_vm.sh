@@ -38,5 +38,5 @@ if [ "$client" = "win11" ]; then
         done
     fi
 
-    $FREERDP /v:${WIN11_VM_IP} /u:${WIN11_USER} /p:${WIN11_PASS} /monitors:1 /audio-mode:0 /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video
+    $FREERDP /v:${WIN11_VM_IP} /u:${WIN11_USER} /p:${WIN11_PASS} /audio-mode:0 /monitors:0 /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video
 fi

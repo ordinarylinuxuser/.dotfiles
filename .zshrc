@@ -37,18 +37,21 @@ zstyle ':omz:update' mode auto # update automatically without asking
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
+# fzf-tab setttings
+[ -f ~/.fzf-tab.conf.zsh ] && source ~/.fzf-tab.conf.zsh
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm colored-man-pages command-not-found pip themes zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git nvm colored-man-pages command-not-found pip themes fzf-tab zsh-syntax-highlighting zsh-autosuggestions)
 
 # source completion and config external files
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-[ -f ~/.nvm/init-nvm.sh ] && source ~/.nvm/init-nvm.sh # for fedora
-#[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh # for arch
+#[ -f ~/.nvm/init-nvm.sh ] && source ~/.nvm/init-nvm.sh # for fedora
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh # for arch
 [ -f ~/.azcompletion.zsh ] && source ~/.az.completion.zsh
 [ -f ~/.fzf.conf.zsh ] && source ~/.fzf.conf.zsh
 [ -f ~/.dotnet.completion.zsh ] && source ~/.dotnet.completion.zsh
