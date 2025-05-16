@@ -6,6 +6,7 @@ export FZF_DEFAULT_COMMAND="fd --hidden --exclude='.git' --exclude='node_modules
 export FZF_DEFAULT_OPTS="
 --tmux 60%
 --ansi
+--multi
 --style full
 --layout reverse
 --border --padding 1,2
