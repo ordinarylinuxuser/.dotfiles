@@ -15,7 +15,7 @@
 - Install zsh & zsh-completion
 
      ```sh
-     sudo pacman -S zsh zsh-completions ttf-hack-nerd bat fd exa tree
+     sudo pacman -S zsh zsh-completions ttf-hack-nerd ttf-jetbrains-mono-nerd bat fd eza tree
      ```
 
 - Install oh-my-zsh
@@ -35,6 +35,18 @@
      ```sh
      git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
      ~/.fzf/install
+     ```
+
+- Install zoxide
+
+     ```sh
+     yay -S zoxide
+     ```
+
+- Install tmux and tmux session manager
+
+     ```sh
+     yay -S tmux sesh-bin
      ```
 
 - Use the .dotfiles and GNU Stow to set up the dotfiles.

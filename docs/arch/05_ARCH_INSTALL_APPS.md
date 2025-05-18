@@ -30,13 +30,30 @@
     yay -S ventoy-bin
     ```
 
-- Install Libreoffice from flathub or software center. https://flathub.org/apps/org.libreoffice.LibreOffice
+- Install Libreoffice
+
+    ```sh
+    yay -S libreoffice-fresh
+    ```
 
 - Grub Customizer.
 
     ```sh
     #install grub customizer
     sudo pacman -S grub-customizer
+    ```
+
+- Noise cancellation for the Mic
+
+    ```sh
+    yay -S noisetorch-bin
+
+    ```
+
+- Install Visual Studio Code
+
+    ```sh
+    yay -S visual-studio-code-bin
     ```
 
 ### For Gaming Setup
@@ -51,7 +68,7 @@
     sudo pacman -S vulkan-tools
     
     #install the directx 9 to 12 support
-    yay -S dxvk-bin vkd3d
+    yay -S dxvk-bin vkd3d vkd3d-proton-bin
 
     #install wine for .net apps
     sudo pacman -S wine
@@ -61,4 +78,10 @@
   
   ```sh
   yay -S protonup-qt
+  ```
+
+- Install Heroic launcher for epic games
+
+  ```sh
+  yay -S heroic-games-launcher-bin
   ```
