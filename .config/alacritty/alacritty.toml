@@ -63,8 +63,8 @@ mods = "Control|Shift"
 program = "/bin/zsh"
 
 [window]
-opacity = 1
+opacity = 0.9
 decorations = "Full"
 padding = { x = 1, y = 1 }
-blur = false
+blur = true
 

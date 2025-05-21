@@ -4,13 +4,14 @@ export FZF_BASE="$HOME/.fzf"
 export FZF_DEFAULT_COMMAND="fd --hidden --exclude='.git' --exclude='node_modules' --exclude='.gradle' --exclude='.settings' --color=always"
 
 export FZF_DEFAULT_OPTS="
---tmux 60%
+--tmux center,60%
+--min-height 10+
 --ansi
 --multi
 --style full
 --layout reverse
---border --padding 1,2
 --input-label ' Input ' --header-label ' File Type '
+--border none
 --bind 'result:transform-list-label:
 	if [[ -z \$FZF_QUERY ]]; then
 		echo \" \$FZF_MATCH_COUNT items \"
@@ -33,15 +34,14 @@ export FZF_CTRL_R_OPTS="
   --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
   --bind 'focus:+transform-header:'
   --color header:italic
-  --border-label ' History '
   --header 'Press CTRL-Y to copy command into clipboard'"
 
 # Preview file content using bat (https://github.com/sharkdp/bat)
-export FZF_CTRL_T_OPTS="--border-label ' Search ' --preview 'bat -n {}'"
+export FZF_CTRL_T_OPTS="--preview 'bat -n {}'"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
 # Print tree structure in the preview window
-export FZF_ALT_C_OPTS="--border-label ' Go To Directory ' --preview 'tree -C {}'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
