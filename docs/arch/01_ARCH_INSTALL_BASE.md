@@ -1,5 +1,9 @@
 # Installation of Arch Linux Base
 
+## Video Tutorial
+
+[![ARCH BASE INSTALL](https://img.youtube.com/vi/LtHysGTXt_w/0.jpg)](https://www.youtube.com/watch?v=LtHysGTXt_w)
+
 ## Prerequisites
 
 1. Download the latest ISO from the [archlinux.org](https://archlinux.org/download/)
