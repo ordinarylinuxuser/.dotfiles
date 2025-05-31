@@ -1,8 +1,13 @@
 # Installation of Arch Linux Gnome
 
+## Video Tutorial
+
+[![ARCH POST INSTALL](https://img.youtube.com/vi/GLpo6FlAWYY/0.jpg)](https://www.youtube.com/watch?v=GLpo6FlAWYY)
+
 ## Prerequisites
 
-1. You have the [Base Installation](01_ARCH_INSTALL_BASE.md) done.
+1. You have the [Base Installation](01_ARCH_INSTALL_BASE.md) done. check video here.
+   [![ARCH BASE INSTALL](https://img.youtube.com/vi/LtHysGTXt_w/0.jpg)](https://www.youtube.com/watch?v=LtHysGTXt_w)
 2. We will be using yay (aur helper) for ease of use. you can just use pacman command directly or if its aur package then use any aur helper.
 
 ## Installation Steps

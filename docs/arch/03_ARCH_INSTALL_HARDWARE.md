@@ -1,8 +1,13 @@
 # Installation of Hardware Drivers for Arch Linux Gnome
 
+## Video Tutorial
+
+[![ARCH POST INSTALL](https://img.youtube.com/vi/GLpo6FlAWYY/0.jpg)](https://www.youtube.com/watch?v=GLpo6FlAWYY)
+
 ## Prerequisites
 
 1. You have the [Base Installation](01_ARCH_INSTALL_BASE.md) done.
+   [![ARCH BASE INSTALL](https://img.youtube.com/vi/LtHysGTXt_w/0.jpg)](https://www.youtube.com/watch?v=LtHysGTXt_w)
 
 ## Installation Steps
 
