@@ -37,7 +37,8 @@ return { --- Uncomment these if you want to manage LSP servers from neovim
                 }
             })
             require('mason-lspconfig').setup({
-                ensure_installed = { 'lua_ls', 'omnisharp' },
+                ensure_installed = { 'lua_ls', 'omnisharp', 'marksman' },
+                automatic_enable = true,
                 handlers = {
                     lsp_zero.default_setup,
                     marksman = function()

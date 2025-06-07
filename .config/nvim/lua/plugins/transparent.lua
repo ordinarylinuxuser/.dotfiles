@@ -13,7 +13,7 @@ return {
             },
             -- table: additional groups that should be cleared
             extra_groups = {
-                "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+                "NormalFloat",   -- plugins which have float panel such as Lazy, Mason, LspInfo
                 "NvimTreeNormal" -- NvimTree
             },
             -- table: groups you don't want to clear
@@ -22,5 +22,12 @@ return {
             -- Also the user event "TransparentClear" will be triggered
             on_clear = function() end,
         })
+
+        vim.g.transparent_groups = vim.list_extend(
+            vim.g.transparent_groups or {},
+            vim.tbl_map(function(v)
+                return v.hl_group
+            end, vim.tbl_values(require('bufferline.config').highlights))
+        )
     end,
 }

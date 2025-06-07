@@ -8,7 +8,7 @@ return {
                 themable = true,
                 numbers = "buffer_id",
                 highlights = require("catppuccin.groups.integrations.bufferline").get(),
-                diagnostics = "nvim_lsp",
+                --diagnostics = "nvim_lsp",
                 separator_style = "thin" or "slant" or "padded_slant",
                 show_tab_indicators = true,
                 show_buffer_close_icons = true,
@@ -33,7 +33,7 @@ return {
                     items = {
                         {
                             name = "Tests", -- Mandatory
-                            highlight = { underline = true, sp = "blue" }, -- Optional
+                            highlight = { underline = false, sp = "blue" }, -- Optional
                             priority = 2, -- determines where it will appear relative to other groups (Optional)
                             icon = "", -- Optional
                             matcher = function(buf) -- Mandatory
@@ -42,7 +42,7 @@ return {
                         },
                         {
                             name = "Docs",
-                            highlight = { undercurl = true, sp = "green" },
+                            highlight = { undercurl = false, sp = "green" },
                             auto_close = false, -- whether or not close this group if it doesn't contain the current buffer
                             matcher = function(buf)
                                 return buf.name:match('%.md') or buf.name:match('%.txt')

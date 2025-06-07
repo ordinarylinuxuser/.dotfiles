@@ -48,7 +48,14 @@ vim.cmd [[
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
-  virtual_text = false,
+    virtual_text = true,
+    -- virtual_lines = false
 })
 
---g.transparent_enabled = 0
+-- g.vimwiki_list = {
+--     {
+--         path = "~/.dotfiles-private/vimwiki",
+--         syntax = "markdown",
+--         ext = "md"
+--     }
+-- }

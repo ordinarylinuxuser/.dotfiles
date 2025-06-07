@@ -13,6 +13,11 @@ path = "~/.dotfiles-private"
 startup_command = "nvim"
 
 [[session]]
+name = "vimwiki"
+path = "~/.dotfiles-private/vimwiki"
+startup_command = "nvim"
+ 
+[[session]]
 name = "config"
 path = "~/.config"
 startup_command = "nvim"
