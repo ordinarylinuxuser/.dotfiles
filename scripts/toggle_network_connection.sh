@@ -1,28 +1,54 @@
 #!/bin/bash
 
-# Check if at least one bridge name is provided
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 <bridge-name-1> [bridge-name-2] ..."
+# Check for minimum arguments
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 <up|down> <network-name-1> [network-name-2] ..."
     exit 1
 fi
 
-# Loop through all provided bridge names
-for BRIDGE in "$@"; do
-    # Verify bridge exists
-    if ! nmcli connection show "$BRIDGE" &>/dev/null; then
-        echo "Error: Bridge '$BRIDGE' not found. Skipping."
+ACTION="$1"
+shift
+
+# Validate action
+if [[ "$ACTION" != "up" && "$ACTION" != "down" ]]; then
+    echo "Error: First parameter must be 'up' or 'down'"
+    exit 1
+fi
+
+# Loop through all network names
+for NETWORK in "$@"; do
+    # Verify network exists
+    if ! nmcli connection show "$NETWORK" &>/dev/null; then
+        echo "Error: Network '$NETWORK' not found. Skipping."
         continue
     fi
 
-    # Check current state
-    ACTIVE_STATE=$(nmcli -g GENERAL.STATE device show "$BRIDGE" 2>/dev/null)
+    # Get current state
+    STATE=$(nmcli -g GENERAL.STATE device show "$NETWORK" 2>/dev/null)
     
-    # Toggle state based on current status
-    if [[ "$ACTIVE_STATE" == *"connected"* ]]; then
-        nmcli connection down "$BRIDGE"
-        echo "Bridge '$BRIDGE' deactivated."
-    else
-        nmcli connection up "$BRIDGE"
-        echo "Bridge '$BRIDGE' activated."
-    fi
+    # Process action
+    case "$ACTION" in
+        up)
+            if [[ "$STATE" == *"connected"* ]]; then
+                echo "Network '$NETWORK' is already active."
+            else
+                if nmcli connection up "$NETWORK"; then
+                    echo "Network '$NETWORK' activated."
+                else
+                    echo "Failed to activate '$NETWORK'."
+                fi
+            fi
+            ;;
+        down)
+            if [[ "$STATE" != *"connected"* ]]; then
+                echo "Network '$NETWORK' is already inactive."
+            else
+                if nmcli connection down "$NETWORK"; then
+                    echo "Network '$NETWORK' deactivated."
+                else
+                    echo "Failed to deactivate '$NETWORK'."
+                fi
+            fi
+            ;;
+    esac
 done
