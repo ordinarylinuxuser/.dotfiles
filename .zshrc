@@ -64,6 +64,8 @@ if command -v zoxide &>/dev/null; then
   eval "$(zoxide init --cmd cd zsh)"
 fi
 
+bindkey -s '^E' 'spf\r'
+
 # start tmux , here i am only starting tmux if i am using alacritty
 if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && { [ -n "$KONSOLE_VERSION" ] || [ "$TERM" = "alacritty" ]; }; then
   exec tmux new -A -s "Home"
