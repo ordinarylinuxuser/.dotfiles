@@ -3,8 +3,10 @@ source ~/.dotfiles-private/.connect_vm.env
 read -p "Client: " client
 
 FREERDP="xfreerdp"
+IS_RDP=0
 if grep -q '^ID=arch$' /etc/os-release; then
     FREERDP="xfreerdp3" #for arch use the xfreerdp3 cli
+    IS_RDP=1
 fi
 
 connect_vm_rdp() {
@@ -22,7 +24,7 @@ connect_vm_rdp() {
         echo
         echo "VM '$VM_NAME' is not running. Starting it..."
         virsh $LIBVIRT_DEFAULT_URI start "$VM_NAME"
-        
+
         echo "Waiting 30 seconds for vm to start up"
         sleep 30
 
@@ -33,9 +35,14 @@ connect_vm_rdp() {
         done
     fi
 
-    $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:0 /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video
-    
-    return 0 
+    if [ "$IS_RDP" -eq 1 ]; then
+        $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:0 /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video
+    else
+        # Now connect to the VM using virt-viewer
+        virt-viewer $LIBVIRT_DEFAULT_URI --attach --full-screen "$VM_NAME"
+    fi
+
+    return 0
 }
 
 if [ "$client" = "viva" ]; then

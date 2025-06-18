@@ -21,5 +21,11 @@ export RESOLVE_SCRIPT_LIB="/opt/resolve/libs/Fusion/fusionscript.so"
 export PYTHONPATH="$PYTHONPATH:$RESOLVE_SCRIPT_API/Modules/"
 
 export PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
-#source $HOME/.nvm/init-nvm.sh # for fedora
-source /usr/share/nvm/init-nvm.sh # for arch
+
+if grep -q '^ID=arch$' /etc/os-release; then
+    source /usr/share/nvm/init-nvm.sh # for arch
+fi
+
+if grep -q '^ID=fedora$' /etc/os-release; then
+    source $HOME/.nvm/init-nvm.sh # for fedora
+fi
