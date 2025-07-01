@@ -29,5 +29,7 @@ return {
                 return v.hl_group
             end, vim.tbl_values(require('bufferline.config').highlights))
         )
+
+        require("transparent").toggle(true)
     end,
 }

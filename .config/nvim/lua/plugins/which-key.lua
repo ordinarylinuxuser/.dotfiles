@@ -5,6 +5,7 @@ return {
         preset = "modern",
         spec = {
             { "<leader>w",  "<cmd>w<CR>",                                           desc = "[W]rite" },
+            { "<leader>sw", "<cmd>SudaWrite<CR>",                                   desc = "[S]uda [W]rite" },
             { "<leader>q",  "<cmd>q<CR>",                                           desc = "[Q]uit" },
 
             -- Buffers
