@@ -67,6 +67,7 @@ fi
 bindkey -s '^E' 'spf\r'
 
 # start tmux , here i am only starting tmux if i am using alacritty
-if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && { [ -n "$KONSOLE_VERSION" ] || [ "$TERM" = "alacritty" ]; }; then
+if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ "$TERM" = "alacritty" ]; then
+
   exec tmux new -A -s "Home"
 fi
