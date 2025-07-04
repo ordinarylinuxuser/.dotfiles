@@ -19,6 +19,8 @@ fi
 
 export HISTCONTROL=ignoreboth
 
+setopt globdots
+
 #
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
