@@ -85,3 +85,24 @@
   ```sh
   yay -S heroic-games-launcher-bin
   ```
+
+## For docker setup
+
+- Install docker
+
+    ```sh
+    yay -S docker docker-compose docker-buildx
+    ```
+
+- add your user to the docker group
+
+    ```sh
+    sudo usermod -aG docker $USER
+    ```
+
+- Enable and start the docker service
+
+    ```sh
+    sudo systemctl enable --now docker
+    sudo systemctl enable --now containerd
+    ```
