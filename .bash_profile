@@ -12,7 +12,6 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DOTNET_ROOT=$HOME/.dotnet
 export DOTNET_INSTALL_DIR=$HOME/.dotnet
-#export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export QT_DEVICE_PIXEL_RATIO=2
 export QT_AUTO_SCREEN_SCALE_FACTOR=true
 export LIBVIRT_DEFAULT_URI='qemu:///system'
