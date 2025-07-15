@@ -105,7 +105,7 @@
   - install the essential packages
 
     ```sh
-    pacstrap -K /mnt base linux linux-firmware vi neovim btrfs-progs dosfstools exfatprogs ntfs-3g networkmanager man-db man-pages sof-firmware sof-tools texinfo
+    pacstrap -K /mnt base base-devel linux linux-firmware vi neovim btrfs-progs dosfstools exfatprogs ntfs-3g networkmanager man-db man-pages sof-firmware sof-tools texinfo
     ```
 
   - generate the fstab. (Linux will use this file to mount your partitions at boot)
