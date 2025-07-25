@@ -34,3 +34,8 @@ path = "~/Documents/gits"
 [[session]]
 name = "Downloads"
 path = "~/Downloads"
+
+[[session]]
+name = "vulcan-server"
+path = "~"
+startup_command = "ssh vulcan@192.168.3.2"

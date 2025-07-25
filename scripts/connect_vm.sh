@@ -55,9 +55,9 @@ if [ "$client" = "otr" ]; then
 fi
 
 if [ "$client" = "win11" ]; then
-    connect_vm_rdp $WIN11_VM_NAME $IP_ARCH_VM $WIN11_USER $WIN11_PASS
+    connect_vm_rdp $WIN11_VM_NAME $IP_WIN11_VM $WIN11_USER $WIN11_PASS
 fi
 
 if [ "$client" = "archlinux" ]; then
-    connect_vm_rdp $ARCH_VM_NAME $IP_WIN11_VM $ARCH_USER $ARCH_PASS
+    connect_vm_rdp $ARCH_VM_NAME $IP_ARCH_VM $ARCH_USER $ARCH_PASS
 fi
