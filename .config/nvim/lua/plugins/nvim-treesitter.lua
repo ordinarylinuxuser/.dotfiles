@@ -1,6 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
+    lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     build = ":TSUpdate",
     config = function()

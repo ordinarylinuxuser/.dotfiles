@@ -27,6 +27,9 @@ return {
             { "<leader>gP", "<cmd>Git pull<CR>",                                    desc = "[G]it [P]ull" },
             { "<leader>gp", "<cmd>Git push<CR>",                                    desc = "[G]it [p]ush" },
 
+            -- Lazy
+            { "<leader>ls", "<cmd>Lazy sync<CR>",                                   desc = "[l]azy [s]ync" },
+
             -- Glow
             { "<leader>mp", "<cmd>Glow<CR>",                                        desc = "[M]arkdown [P]review" },
             { "<leader>mt", "<cmd>Mtoc<CR>",                                        desc = "[M]arkdown [T]able of Content" },
