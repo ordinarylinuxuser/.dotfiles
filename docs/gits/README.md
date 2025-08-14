@@ -28,4 +28,13 @@ nano ~/.ssh/authorized_keys   # paste in the public key line
 chmod 600 ~/.ssh/authorized_keys
 ```
 
+- Change existing repo from https to ssh
+```sh
+# check current origin
+git remote -v
 
+# get the ssh clone url from the git hub (should be where you get the https clone url)
+
+# update the remote url 
+git remote set-url origin <url>
+```
