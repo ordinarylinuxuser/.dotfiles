@@ -8,7 +8,14 @@ yay -S git
 
 - Generate an SSH Key pair on client machine
 ```sh
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com" #give unique file name when asked to create a file
+```
+
+- Multiple ssh Key add
+```sh
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa_personal_github
+ssh-add ~/.ssh/id_rsa_work_github
 ```
 
 - Copy your public key to the server
