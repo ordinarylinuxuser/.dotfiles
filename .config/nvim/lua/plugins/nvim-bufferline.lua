@@ -7,7 +7,7 @@ return {
             options = {
                 themable = true,
                 numbers = "buffer_id",
-                highlights = require("catppuccin.groups.integrations.bufferline").get(),
+                highlights = require("catppuccin.special.bufferline").get_theme(),
                 --diagnostics = "nvim_lsp",
                 separator_style = "thin" or "slant" or "padded_slant",
                 show_tab_indicators = true,
