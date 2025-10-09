@@ -1,0 +1,12 @@
+[Unit]
+Description=Run weekly
+Requires=backup-paperless.service
+
+[Timer]
+Unit=backup-paperless.service
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

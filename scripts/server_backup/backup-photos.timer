@@ -1,0 +1,12 @@
+[Unit]
+Description=Run monthly
+Requires=backup-photos.service
+
+[Timer]
+Unit=backup-photos.service
+OnCalendar=monthly
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

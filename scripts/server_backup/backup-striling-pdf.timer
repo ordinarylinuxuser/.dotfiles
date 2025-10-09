@@ -1,0 +1,12 @@
+[Unit]
+Description=Run montly
+Requires=backup-striling-pdf.service
+
+[Timer]
+Unit=backup-striling-pdf.service
+OnCalendar=monthly
+Persistent=true
+RandomizedDelaySec=180
+
+[Install]
+WantedBy=timers.target

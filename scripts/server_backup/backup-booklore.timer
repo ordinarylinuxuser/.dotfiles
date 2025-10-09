@@ -1,0 +1,12 @@
+[Unit]
+Description=Run montly
+Requires=backup-booklore.service
+
+[Timer]
+Unit=backup-booklore.service
+OnCalendar=monthly
+Persistent=true
+RandomizedDelaySec=180
+
+[Install]
+WantedBy=timers.target

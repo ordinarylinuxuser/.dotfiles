@@ -1,0 +1,11 @@
+[Unit]
+Description=Run daily
+Requires=backup-vaultwarden.service
+
+[Timer]
+Unit=backup-vaultwarden.service
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target

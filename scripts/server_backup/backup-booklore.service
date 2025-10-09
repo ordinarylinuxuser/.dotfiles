@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup booklore Service
+Wants=backup-booklore.timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/vulcan/.dotfiles/scripts/server_backup/backup_manager.sh -s booklore
+
