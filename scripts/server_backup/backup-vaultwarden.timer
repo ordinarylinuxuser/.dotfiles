@@ -1,10 +1,10 @@
 [Unit]
-Description=Run daily
+Description=Run weekly
 Requires=backup-vaultwarden.service
 
 [Timer]
 Unit=backup-vaultwarden.service
-OnCalendar=daily
+OnCalendar=weekly
 Persistent=true
 
 [Install]
