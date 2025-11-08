@@ -4,7 +4,7 @@
 open_port() {
     echo "Opening port..."
     read -p "Enter the port number: " port_number
-    read -p "Enter protocol (TCP/UDP): " protocol
+    read -p "Enter protocol (tcp/udp): " protocol
     sudo firewall-cmd --permanent --add-port="$port_number/$protocol"
     if [ $? -eq 0 ]; then
         echo "Port $port_number ($protocol) opened successfully."
@@ -49,9 +49,11 @@ while true; do
     case $choice in
         1)
             open_port
+            read -p "Press Enter to continue..."
             ;;
         2)
             close_port
+            read -p "Press Enter to continue..."
             ;;
         3)
             if firewalld_status; then
@@ -67,6 +69,7 @@ while true; do
         *)
             echo "Invalid choice. Please enter a number between 0 and 3."
             sleep 1
+            read -p "Press Enter to continue..."
             ;;
     esac
 done

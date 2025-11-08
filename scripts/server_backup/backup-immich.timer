@@ -1,9 +1,9 @@
 [Unit]
 Description=Run monthly
-Requires=backup-photos.service
+Requires=backup-immich.service
 
 [Timer]
-Unit=backup-photos.service
+Unit=backup-immich.service
 OnCalendar=monthly
 Persistent=true
 RandomizedDelaySec=120
