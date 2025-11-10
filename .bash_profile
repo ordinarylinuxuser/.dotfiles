@@ -4,11 +4,11 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-export MANGOHUD=1
+#export MANGOHUD=1
 export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_QPA_PLATFORM=wayland
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export QT_DEVICE_PIXEL_RATIO=2
 export QT_AUTO_SCREEN_SCALE_FACTOR=true

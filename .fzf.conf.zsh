@@ -1,7 +1,7 @@
 # FZF settings
 export FZF_BASE="$HOME/.fzf"
 
-export FZF_DEFAULT_COMMAND="fd --hidden --exclude='.git' --exclude='node_modules' --exclude='.gradle' --exclude='.settings' --color=always"
+export FZF_DEFAULT_COMMAND="fd --hidden --exclude='.snapshots' --exclude='.git' --exclude='node_modules' --exclude='.gradle' --exclude='.settings' --color=always"
 
 export FZF_DEFAULT_OPTS="
 --tmux center,60%
