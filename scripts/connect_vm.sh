@@ -1,7 +1,7 @@
 source ~/.dotfiles-private/.connect_vm.env
 source ~/.dotfiles-private/.ip.env
 
-read -p "Client: " client
+client=${1:-"win11"}
 
 FREERDP="xfreerdp"
 IS_RDP=0
@@ -37,7 +37,7 @@ connect_vm_rdp() {
     fi
 
     if [ "$IS_RDP" -eq 1 ]; then
-        $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:0 /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video
+        $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:0 /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video +fonts +clipboard
     else
         # Now connect to the VM using virt-viewer
         virt-viewer $LIBVIRT_DEFAULT_URI --attach --full-screen "$VM_NAME"
@@ -46,13 +46,6 @@ connect_vm_rdp() {
     return 0
 }
 
-if [ "$client" = "viva" ]; then
-    $FREERDP $VIVA_RDPW_LOCATION /gateway:type:arm /sec:aad /floatbar /f +auto-reconnect +dynamic-resolution
-fi
-
-if [ "$client" = "otr" ]; then
-    $FREERDP $OTR_RDPW_LOCATION /gateway:type:arm /u:$OTR_USER /p:$OTR_PASS /d:$OTR_DOMAIN /sec:tls /cert:ignore /floatbar +auto-reconnect +dynamic-resolution /f
-fi
 
 if [ "$client" = "win11" ]; then
     connect_vm_rdp $WIN11_VM_NAME $IP_WIN11_VM $WIN11_USER $WIN11_PASS
