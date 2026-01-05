@@ -5,13 +5,13 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 #export MANGOHUD=1
-export QT_QPA_PLATFORMTHEME=qt6ct
-export QT_QPA_PLATFORM=wayland
+#export QT_QPA_PLATFORMTHEME=qt6ct
+#export QT_QPA_PLATFORM=wayland
 #export GTK_IM_MODULE=fcitx
 #export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-export QT_DEVICE_PIXEL_RATIO=2
-export QT_AUTO_SCREEN_SCALE_FACTOR=true
+#export QT_DEVICE_PIXEL_RATIO=2
+#export QT_AUTO_SCREEN_SCALE_FACTOR=true
 export LIBVIRT_DEFAULT_URI='qemu:///system'
 export RESOLVE_SCRIPT_API="/opt/resolve/Developer/Scripting"
 export RESOLVE_SCRIPT_LIB="/opt/resolve/libs/Fusion/fusionscript.so"
