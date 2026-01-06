@@ -45,3 +45,28 @@ git remote -v
 # update the remote url 
 git remote set-url origin <url>
 ```
+
+- Setup config
+```sh
+cd ~/.ssh && touch config
+```
+
+```text
+Host github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_personal
+  IdentitiesOnly yes
+
+Host work.github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_work
+  IdentitiesOnly yes
+
+Host work.gitlab.com
+  Hostname gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_work_gitlab
+  IdentitiesOnly yes
+```
