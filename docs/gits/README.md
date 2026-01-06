@@ -58,15 +58,9 @@ Host github.com
   IdentityFile ~/.ssh/id_ed25519_personal
   IdentitiesOnly yes
 
-Host work.github.com
+Host github.com
   Hostname github.com
-  User git
+  User git_work
   IdentityFile ~/.ssh/id_ed25519_work
-  IdentitiesOnly yes
-
-Host work.gitlab.com
-  Hostname gitlab.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_work_gitlab
   IdentitiesOnly yes
 ```
