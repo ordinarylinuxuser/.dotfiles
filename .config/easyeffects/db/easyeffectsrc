@@ -1,0 +1,18 @@
+[Presets]
+lastLoadedInputPreset=Ken's Effects
+
+[StreamInputs]
+inputDevice=alsa_input.usb-HP__Inc_HyperX_QuadCast_4111-00.analog-stereo
+mostUsedPresets=Ken's Effects
+plugins=autogain#0,rnnoise#0,deepfilternet#0,equalizer#0,limiter#0
+usedPresets=Ken's Effects:1
+visiblePlugin=autogain#0
+
+[StreamOutputs]
+outputDevice=alsa_output.pci-0000_0f_00.6.analog-stereo
+
+[Window]
+autostartOnLogin=true
+height=2063
+visiblePage=inputPage
+width=3830
