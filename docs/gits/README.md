@@ -52,15 +52,23 @@ cd ~/.ssh && touch config
 ```
 
 ```text
-Host github.com
+Host github.com-olu
   Hostname github.com
   User git
-  IdentityFile ~/.ssh/id_ed25519_personal
+  IdentityFile ~/.ssh/id_ed25519_ordinarylinuxuser
   IdentitiesOnly yes
 
-Host github.com
+Host github.com-maya
   Hostname github.com
-  User git_work
-  IdentityFile ~/.ssh/id_ed25519_work
+  User git
+  IdentityFile ~/.ssh/id_ed25519_maya
   IdentitiesOnly yes
+
+```
+
+- Clone using the host
+```sh
+git clone git@github.com-olu:ordinarylinuxuser/.dotfiles.git
+# or
+git clone git@github.com-maya:mayakrunal/.dotfiles.git
 ```
