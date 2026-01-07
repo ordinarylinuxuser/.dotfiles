@@ -22,11 +22,6 @@ return {
             { "<leader>fc", "<cmd>FzfLua commands<CR>",                             desc = "Find [C]ommands" },
             { "<leader>fe", "<cmd>NvimTreeToggle<CR>",                              desc = "[E]xplorer" },
 
-            -- Git
-            { "<leader>gs", "<cmd>Git<CR>",                                         desc = "[G]it [S]tatus" },
-            { "<leader>gP", "<cmd>Git pull<CR>",                                    desc = "[G]it [P]ull" },
-            { "<leader>gp", "<cmd>Git push<CR>",                                    desc = "[G]it [p]ush" },
-
             -- Lazy
             { "<leader>ls", "<cmd>Lazy sync<CR>",                                   desc = "[l]azy [s]ync" },
 
