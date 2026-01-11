@@ -19,6 +19,9 @@ export LIBVIRT_DEFAULT_URI='qemu:///system'
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
 
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
 if grep -q '^ID=arch$' /etc/os-release; then
     source /usr/share/nvm/init-nvm.sh # for arch
 fi
