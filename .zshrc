@@ -54,7 +54,7 @@ autoload -U +X bashcompinit && bashcompinit
 [ -f ~/.helm.completion.zsh ] && source ~/.helm.completion.zsh
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
-[ -f ~/.hist.conf.zsh] && source ~/.hist.conf.zsh
+[ -f ~/.hist.conf.zsh ] && source ~/.hist.conf.zsh
 
 if command -v zoxide &>/dev/null; then
   # start zoxide
