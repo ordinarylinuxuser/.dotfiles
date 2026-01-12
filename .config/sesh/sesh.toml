@@ -13,9 +13,9 @@ path = "~/.dotfiles-private"
 startup_command = "nvim"
 
 [[session]]
-name = "vimwiki"
-path = "~/.dotfiles-private/vimwiki"
-startup_command = "nvim"
+name = "vm"
+path = "~"
+startup_command = "vm"
  
 [[session]]
 name = "config"
