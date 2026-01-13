@@ -52,10 +52,8 @@ vim.diagnostic.config({
     -- virtual_lines = false
 })
 
--- g.vimwiki_list = {
---     {
---         path = "~/.dotfiles-private/vimwiki",
---         syntax = "markdown",
---         ext = "md"
---     }
--- }
+-- Sync clipboard between OS and Neovim.
+-- Schedule the setting after `UiEnter` because it can increase startup-time.
+vim.schedule(function()
+    vim.opt.clipboard = 'unnamedplus'
+end)
