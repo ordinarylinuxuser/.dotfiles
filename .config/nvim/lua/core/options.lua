@@ -19,7 +19,6 @@ opt.smartcase = true       -- Smart case
 opt.updatetime = 250       --Decrease update time
 opt.signcolumn = "yes"     -- Always show sign column
 opt.autoindent = true      -- indent a newline the same amount as the line just typed
---opt.clipboard = "unnamedplus" -- Access system clipboard
 opt.timeoutlen = 300       --	Time in milliseconds to wait for a mapped sequence to complete.
 opt.list = false
 opt.termguicolors = true
@@ -28,6 +27,7 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
+
 --search configurations
 opt.wildignorecase = true
 opt.path:remove "/usr/include"
@@ -57,3 +57,11 @@ vim.diagnostic.config({
 vim.schedule(function()
     vim.opt.clipboard = 'unnamedplus'
 end)
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("HelpWindowRight", {}),
+    pattern = "help",
+    callback = function()
+        vim.cmd.wincmd("L") -- Moves the help window to the far right
+    end
+})
