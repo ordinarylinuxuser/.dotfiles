@@ -1,7 +1,33 @@
 source ~/.dotfiles-private/.connect_vm.env
 source ~/.dotfiles-private/.ip.env
 
-client=${1:-"win11"}
+client="win11"
+monitor_id=0
+
+# Argument Parsing Loop
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -m=*|--monitor=*)
+      # Handle syntax: -m=1
+      monitor_id=${1#*=}
+      ;;
+    -m|--monitor)
+      # Handle syntax: -m 1
+      monitor_id=$2
+      shift # Skip the value argument
+      ;;
+    -*)
+      echo "Error: Unknown option: $1" >&2
+      exit 1
+      ;;
+    *)
+      # Assume any non-flag argument is the client name
+      client="$1"
+      ;;
+  esac
+  shift
+done
+
 
 FREERDP="xfreerdp"
 IS_RDP=0
@@ -15,6 +41,7 @@ connect_vm_rdp() {
     local IP=$2
     local USER=$3
     local PASS=$4
+    local MON_ID=$5
     local LIBVIRT_DEFAULT_URI="--connect qemu:///system"
 
     # Get the current state of the VM using virsh
@@ -37,7 +64,7 @@ connect_vm_rdp() {
     fi
 
     if [ "$IS_RDP" -eq 1 ]; then
-        $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:0 /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video +fonts +clipboard
+        $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:${MON_ID} /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video +fonts +clipboard
     else
         # Now connect to the VM using virt-viewer
         virt-viewer $LIBVIRT_DEFAULT_URI --attach --full-screen "$VM_NAME"
@@ -48,9 +75,9 @@ connect_vm_rdp() {
 
 
 if [ "$client" = "win11" ]; then
-    connect_vm_rdp $WIN11_VM_NAME $IP_WIN11_VM $WIN11_USER $WIN11_PASS
+    connect_vm_rdp $WIN11_VM_NAME $IP_WIN11_VM $WIN11_USER $WIN11_PASS $monitor_id
 fi
 
 if [ "$client" = "archlinux" ]; then
-    connect_vm_rdp $ARCH_VM_NAME $IP_ARCH_VM $ARCH_USER $ARCH_PASS
+    connect_vm_rdp $ARCH_VM_NAME $IP_ARCH_VM $ARCH_USER $ARCH_PASS $monitor_id
 fi

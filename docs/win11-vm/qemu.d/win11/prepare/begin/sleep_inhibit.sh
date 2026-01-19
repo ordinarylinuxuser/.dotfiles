@@ -8,8 +8,7 @@ if [ $? -ne 0 ]; then
      systemd-run --unit="$LOCK_UNIT" \
                 --description="Prevent sleep for VM 'win11'" \
                 --service-type=simple \
-                systemd-inhibit --what=sleep \
-                                --who="Libvirt-Hook" \
+                systemd-inhibit --who="Libvirt-Hook" \
                                 --why="VM 'win11' is running" \
                                 --mode=block \
                                 sleep infinity
