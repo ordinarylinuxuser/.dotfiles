@@ -1,7 +1,11 @@
 return {
     "https://codeberg.org/andyg/leap.nvim.git",
     config = function()
-        require('leap').add_default_mappings()
+        -- require('leap').add_default_mappings()
+
+        vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
+        vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+        vim.keymap.set('n', 'gs', '<Plug>(leap-from-window)')
 
         -- Highly recommended: define a preview filter to reduce visual noise
         -- and the blinking effect after the first keypress (see
