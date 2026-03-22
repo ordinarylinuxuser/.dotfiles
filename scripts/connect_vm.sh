@@ -64,7 +64,7 @@ connect_vm_rdp() {
     fi
 
     if [ "$IS_RDP" -eq 1 ]; then
-        $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:${MON_ID} /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +video +fonts +clipboard
+        $FREERDP /v:${IP} /u:${USER} /p:${PASS} /audio-mode:0 /monitors:${MON_ID} /audio:sys:alsa /mic:sys:alsa /floatbar /cert:ignore /f +dynamic-resolution +auto-reconnect /auto-reconnect-max-retries:10 -compression +fonts +clipboard
     else
         # Now connect to the VM using virt-viewer
         virt-viewer $LIBVIRT_DEFAULT_URI --attach --full-screen "$VM_NAME"
