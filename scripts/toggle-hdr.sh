@@ -25,12 +25,6 @@ if [[ "${HDR_STATUS,,}" == "enabled" ]]; then
     echo "HDR is ENABLED on $OUTPUT. Disabling..."
     kscreen-doctor output."$OUTPUT".hdr.disable output."$OUTPUT".wcg.disable
     
-    # Wait 2 seconds for the monitor to finish switching to SDR
-    sleep 2
-    
-    # Restore Brightness to 100
-    ddcutil --display 2 setvcp 10 100
-    
 elif [[ "${HDR_STATUS,,}" == "disabled" ]]; then
     echo "HDR is DISABLED on $OUTPUT. Enabling..."
     kscreen-doctor output."$OUTPUT".hdr.enable output."$OUTPUT".wcg.enable
