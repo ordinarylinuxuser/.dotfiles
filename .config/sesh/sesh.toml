@@ -5,22 +5,18 @@ path = "~"
 [[session]]
 name = "dotfiles"
 path = "~/.dotfiles"
-startup_command = "nvim"
 
 [[session]]
 name = "dotfiles-private"
 path = "~/.dotfiles-private"
-startup_command = "nvim"
 
 [[session]]
 name = "vm"
 path = "~"
-startup_command = "vm"
  
 [[session]]
 name = "config"
 path = "~/.config"
-startup_command = "nvim"
 
 [[session]]
 name = "scripts"

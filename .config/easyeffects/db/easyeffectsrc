@@ -1,3 +1,6 @@
+[EffectsPipelines]
+processAllOutputs=false
+
 [Presets]
 lastLoadedInputPreset=Ken's Effects
 
@@ -6,13 +9,18 @@ inputDevice=alsa_input.usb-HP__Inc_HyperX_QuadCast_4111-00.analog-stereo
 mostUsedPresets=Ken's Effects
 plugins=autogain#0,rnnoise#0,deepfilternet#0,equalizer#0,limiter#0
 usedPresets=Ken's Effects:1
+visiblePage=pluginsPage
 visiblePlugin=autogain#0
 
 [StreamOutputs]
 outputDevice=alsa_output.pci-0000_0f_00.6.analog-stereo
+visiblePage=pluginsPage
 
 [Window]
 autostartOnLogin=true
-height=2063
+enableServiceMode=false
+height=2050
 visiblePage=inputPage
-width=3830
+width=1898
+xdgGlobalShortcuts=true
+xdgGlobalShortcutsBound=true
